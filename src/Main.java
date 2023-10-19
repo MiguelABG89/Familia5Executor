@@ -48,16 +48,19 @@ public class Main {
         @Override
         public Integer call() {
             int l_Digito1 = 0;
+            int l_Digito2 = a_Operador1;
             int l_Suma = 0;
-            int l_Almacenador=a_Operador1;
+            int l_Almacenador=0;
 
-            while (l_Almacenador != 0) {
+            while (l_Digito2 != 0) {
 
-                l_Digito1 = l_Almacenador % 10;
-                l_Almacenador/=10;
-                if ((l_Digito1+l_Almacenador)%5==0){
-                    l_Suma=a_Operador1;
-                }
+                l_Digito1 = l_Digito2 % 10;
+                l_Digito2/=10;
+                l_Almacenador+=(l_Digito1+l_Digito2);
+
+            }
+            if (l_Almacenador%5==0){
+                l_Suma=a_Operador1;
             }
             return l_Suma;
         }
